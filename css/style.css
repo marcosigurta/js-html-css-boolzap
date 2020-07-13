@@ -48,6 +48,7 @@ main .main-wrapper .leftCol,
 main .main-wrapper .rightCol {
     background-color: #eaeaea;
     align-items: center;
+    height: 100%;
 }
 main .main-wrapper .leftCol {
     width: 35%;
@@ -108,7 +109,7 @@ main .main-wrapper .leftCol .search label {
     height: 30px;
     background-color: #fff;
     align-items: center;
-    border: 1px solid #dadada;
+    box-shadow: 1px 1px 10px 1px #dadada;
 }
 
 main .main-wrapper .leftCol .search label i {
@@ -122,6 +123,23 @@ main .main-wrapper .leftCol .search label #search {
     border:none;
     width: 90%;
 }
+
+
+
+/* Right Content */
+
+main .main-wrapper .rightCol .chat-content {
+    background: url(../img/whp-bg1.png);
+    width: 100%;
+    height: calc(100% - 140px);
+    overflow: auto;
+}
+
+main .main-wrapper .rightCol .chat-text {
+    height: 60px;
+    background-color: 	#f3eee9;
+}
+
 
 
 
