@@ -1,147 +1,155 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Background Colors */
 body {
-    height: 100vh;
-    background: url(../img/boolzap-bg.png)no-repeat;
-    background-size: cover;
+  height: 100vh;
+  background: url(../img/boolzap-bg.png) no-repeat;
+  background-size: cover;
 }
-
-
 
 /* General rules */
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
 }
-
-
 
 /* Main */
 
 main {
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
 main .main-wrapper {
-    width: 85%;
-    height: 95%;
-    background-color: #fff;
+  width: 85%;
+  height: 95%;
+  background-color: #fff;
 }
 
 /* Main Left/right column General */
 main .main-wrapper .leftCol,
 main .main-wrapper .rightCol {
-    background-color: #eaeaea;
-    align-items: center;
-    height: 100%;
+  background-color: #eaeaea;
+  align-items: center;
+  height: 100%;
 }
 main .main-wrapper .leftCol {
-    width: 35%;
-    border-right: 2px solid #dadada;
+  width: 35%;
+  border-right: 2px solid #dadada;
 }
 main .main-wrapper .rightCol {
-    width: 65%;
-    border-right: 2px solid #dadada;
+  width: 65%;
+  border-right: 2px solid #dadada;
 }
 
 main .main-wrapper .nav {
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 10px;
 }
 
 main .main-wrapper .nav .comands i {
-    color:	#b1b1b1;
-    margin-left: 10px;
-    font-size: 20px;
+  color: #b1b1b1;
+  margin-left: 10px;
+  font-size: 20px;
 }
 
 /* Left-content */
 
-main .main-wrapper .leftCol .notification{
-    height: 100px;
-    background-color: #8ddafc;
-    align-items: center;
-    
+main .main-wrapper .leftCol .notification {
+  height: 100px;
+  background-color: #8ddafc;
+  align-items: center;
 }
 
 main .main-wrapper .leftCol .notification .avatar {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
 }
 
 main .main-wrapper .leftCol .notification .avatar i {
-    font-size: 20px;
-    color: #8ddafc;
+  font-size: 20px;
+  color: #8ddafc;
 }
 
 /* Search Conversation */
 
 main .main-wrapper .leftCol .search {
-    padding: 2%;
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-    background-color: #F6F6F6;
+  padding: 2%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
 }
 
 main .main-wrapper .leftCol .search label {
-    width: 100%;
-    height: 30px;
-    background-color: #fff;
-    align-items: center;
-    box-shadow: 1px 1px 10px 1px #dadada;
+  width: 100%;
+  height: 30px;
+  background-color: #fff;
+  align-items: center;
+  box-shadow: 1px 1px 10px 1px #dadada;
 }
 
 main .main-wrapper .leftCol .search label i {
-    color: #b1b1b1;
-    width: 10%;
-    margin-left: 20px;
-   
+  color: #b1b1b1;
+  width: 10%;
+  margin-left: 20px;
 }
 
 main .main-wrapper .leftCol .search label #search {
-    border:none;
-    width: 90%;
+  border: none;
+  width: 90%;
 }
-
-
 
 /* Right Content */
 
 main .main-wrapper .rightCol .chat-content {
-    background: url(../img/whp-bg1.png);
-    width: 100%;
-    height: calc(100% - 140px);
-    overflow: auto;
+  background: url(../img/whp-bg1.png);
+  width: 100%;
+  height: calc(100% - 140px);
+  overflow: auto;
 }
 
 main .main-wrapper .rightCol .chat-text {
-    height: 60px;
-    background-color: 	#f3eee9;
+  height: 60px;
+  background-color: #f3eee9;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 2%;
 }
 
+main .main-wrapper .rightCol .chat-text i {
+  color: #6a7376;
+  font-size: 20px;
+  margin: 0 10px;
+}
 
+main .main-wrapper .rightCol .chat-text label {
+  width: 90%;
+}
 
-
-
-
+main .main-wrapper .rightCol .chat-text label #chat-text-input {
+  width: 100%;
+  height: 40px;
+  padding: 1%;
+  border: none;
+  border-radius: 5px;
+}
