@@ -21,14 +21,14 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #fff;
+  background: url(../img/avatar1.png)no-repeat center center/cover;
 }
 
 /* Main */
 
 main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -45,6 +45,7 @@ main .main-wrapper .rightCol {
   background-color: #eaeaea;
   align-items: center;
   height: 100%;
+  overflow-y: hidden;
 }
 main .main-wrapper .leftCol {
   width: 35%;
@@ -74,18 +75,21 @@ main .main-wrapper .leftCol .notification {
   height: 100px;
   background-color: #8ddafc;
   align-items: center;
+  padding: 0 10px;
 }
 
-main .main-wrapper .leftCol .notification .avatar {
-  position: relative;
+main .main-wrapper .leftCol .notification .avatarbell {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 60px;
   height: 60px;
+  margin-right: 15px;
+  background-color: #fff;
+  border-radius: 50%;
 }
 
-main .main-wrapper .leftCol .notification .avatar i {
+main .main-wrapper .leftCol .notification .avatarbell i {
   font-size: 20px;
   color: #8ddafc;
 }
@@ -117,6 +121,19 @@ main .main-wrapper .leftCol .search label i {
 main .main-wrapper .leftCol .search label #search {
   border: none;
   width: 90%;
+}
+main .main-wrapper .leftCol .conversations-wrapper {
+  overflow: auto;
+  height: calc(100% - 230px);
+}
+main .main-wrapper .leftCol .conversations-wrapper .conversation-chat {
+align-items: center;
+padding: 2%;
+border-bottom: 1px solid #dadada;
+}
+
+main .main-wrapper .leftCol .conversations-wrapper .conversation-chat .avatar {
+    margin-right: 30px;
 }
 
 /* Right Content */
