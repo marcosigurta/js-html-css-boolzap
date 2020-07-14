@@ -1,7 +1,7 @@
 //Funzione per mostrare le opzioni messaggio
 function openOptions(){
     $('.fa-chevron-down').click(function(){
-      $(this).hide();
+      $('.message-options').show();
     });
 }
 

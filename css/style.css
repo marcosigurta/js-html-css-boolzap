@@ -156,6 +156,22 @@ main .main-wrapper .rightCol #chat-content {
   scrollbar-width: thin;
 }
 
+main .main-wrapper .rightCol .contact {
+  align-items: center;
+}
+
+main .main-wrapper .rightCol #chat-details {
+  margin-left: 15px;
+  position: relative;
+}
+
+main .main-wrapper .rightCol #chat-details span {
+  color: #b1b1b1;
+  position: absolute;
+  top: 20px;
+  width: 200px;
+}
+
 main .main-wrapper .rightCol .chat-content .user-message {
   align-self: flex-end;
 }
@@ -181,7 +197,7 @@ main .main-wrapper .rightCol .chat-content .message-options {
   width: 150px;
   border-radius: 2px;
   padding: 10px;
-  /* display: none; */
+  display: none; 
 }
 main .main-wrapper .rightCol .chat-content .message-options span {
   cursor: pointer;
