@@ -1,35 +1,51 @@
-function init() {
-    $('#chat-text-input').keypress(sendMessage);
-    $('.message-time').text(currentTime);
-
+//Funzione per mostrare le opzioni messaggio
+function openOptions(){
+    $('#cpu-message-template > i').click(function(){
+        $('#cpu-message-template').find('.message-options').show();
+    })
 }
+
+//Input Testo chat
+function addMessage() {
+    var target = $('#chat-text-input');
+    target.keyup(userMessage);
+}
+
 
 //Clone Template
 
-function messageClone() {
-    var userClone = $('.user-message').clone();
-    $('.chat-content').append(userClone);
-    $('.user-message').show();
-}
-
-function cpuMessageClone() {
-    var cpuClone = $('.cpu-message').clone();
-    $('.chat-content').append(cpuClone);
-    $('.cpu-message').show();
-}
-
-
-
-function sendMessage() {
-    if (event.which == 13) {
-        var txt = $('#chat-text-input').val();
-        messageClone();
-        $('.user-text').text(txt);
-        $('#chat-text-input').val('');
-        $('.cpu-text').text("Ciao Marco, Funziono!!");
-        setTimeout(cpuMessageClone, 2000);
+function userMessage(event) {
+    var key = event.which;
+    var input = $(this);
+    var txt = input.val();
+    if (key === 13 && txt) {
+        input.val('');
+        printMessage(txt);
     }
 }
+
+function cpuMessage() {
+    var template = $('.cpu-message > #cpu-message-template').clone();
+    var target = $('.chat-content');
+
+    template.find('.cpu-text').text('Ok!');
+    template.find('.message-time').text(currentTime());
+
+    target.append(template);
+}
+
+function printMessage(txt) {
+    var template = $('.user-message > #user-message-template').clone();
+    var target = $('#chat-content');
+
+    template.find('.user-text').text(txt);
+    template.find('.message-time').text(currentTime());
+
+    target.append(template);
+
+    setTimeout(cpuMessage, 2000);
+}
+
 
 //Set current Time
 function addZero(i) {
@@ -49,7 +65,11 @@ function currentTime() {
 
 
 
+function init() {
+    addMessage();
+    openOptions()
 
+}
 
 $(document).ready(init);
 

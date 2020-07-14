@@ -26,7 +26,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url(../img/avatar1.png) no-repeat center center/cover;
+  background: url(../img/avatar3.png) no-repeat center center/cover;
 }
 
 /* Main */
@@ -145,11 +145,12 @@ main .main-wrapper .leftCol .conversations-wrapper .conversation-chat .avatar {
 
 /* Right Content */
 
-main .main-wrapper .rightCol .chat-content {
+main .main-wrapper .rightCol #chat-content {
   background: url(../img/whp-bg1.png);
   width: 100%;
   height: calc(100% - 140px);
   overflow: auto;
+  overflow-x: hidden;
   flex-direction: column;
   padding: 20px;
   scrollbar-width: thin;
@@ -162,21 +163,54 @@ main .main-wrapper .rightCol .chat-content .user-message {
 main .main-wrapper .rightCol .chat-content .cpu-message {
   align-self: flex-start;
 }
-main .main-wrapper .rightCol .chat-content .user-message .user-text,
-main .main-wrapper .rightCol .chat-content .cpu-message .cpu-text {
+
+main .main-wrapper .rightCol .chat-content  i {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  display: none;
+  color: #b1b1b1;
+  font-size: 15px;
+}
+
+main .main-wrapper .rightCol .chat-content .message-options {
+  box-shadow: 1px 1px 4px 1px #dadada;
+  position: fixed;
+  background-color: #fff;
+  z-index: 2;
+  width: 150px;
+  border-radius: 2px;
+  padding: 10px;
+  display: none;
+}
+main .main-wrapper .rightCol .chat-content .message-options span {
+  cursor: pointer;
+}
+
+#user-message-template:hover i,
+#cpu-message-template:hover i{
+display: block;
+}
+
+#user-message-template,
+#cpu-message-template {
   border-radius: 10px;
   padding: 10px 50px 10px 10px;
   max-width: 450px;
   position: relative;
   margin-bottom: 15px;
+  align-items: center;
 }
 
-main .main-wrapper .rightCol .chat-content .user-message .user-text{
+
+#user-message-template {
   background-color: #d5f9ba;
+  align-self: flex-end;
 }
 
-main .main-wrapper .rightCol .chat-content .cpu-message .cpu-text{
+#cpu-message-template {
   background-color: #fff;
+  align-self: flex-start;
 }
 
 main .main-wrapper .rightCol .chat-content .message-time {
@@ -211,4 +245,11 @@ main .main-wrapper .rightCol .chat-text label #chat-text-input {
   padding: 1%;
   border: none;
   border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  main .main-wrapper {
+    width: 100%;
+    height: 100vh;
+  }
 }
