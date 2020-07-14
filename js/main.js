@@ -1,8 +1,8 @@
 //Funzione per mostrare le opzioni messaggio
 function openOptions(){
-    $('#cpu-message-template > i').click(function(){
-        $('#cpu-message-template').find('.message-options').show();
-    })
+    $('.fa-chevron-down').click(function(){
+      $(this).hide();
+    });
 }
 
 //Input Testo chat
@@ -10,7 +10,6 @@ function addMessage() {
     var target = $('#chat-text-input');
     target.keyup(userMessage);
 }
-
 
 //Clone Template
 
@@ -46,7 +45,6 @@ function printMessage(txt) {
     setTimeout(cpuMessage, 2000);
 }
 
-
 //Set current Time
 function addZero(i) {
     if (i < 10) {
@@ -64,11 +62,9 @@ function currentTime() {
 }
 
 
-
 function init() {
     addMessage();
     openOptions()
-
 }
 
 $(document).ready(init);

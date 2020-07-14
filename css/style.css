@@ -181,7 +181,7 @@ main .main-wrapper .rightCol .chat-content .message-options {
   width: 150px;
   border-radius: 2px;
   padding: 10px;
-  display: none;
+  /* display: none; */
 }
 main .main-wrapper .rightCol .chat-content .message-options span {
   cursor: pointer;
