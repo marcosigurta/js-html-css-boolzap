@@ -4,21 +4,34 @@ function init() {
 
 }
 
-function cpuMessage() {
+//Clone Template
+
+function messageClone() {
+    var userClone = $('.user-message').clone();
+    $('.chat-content').append(userClone);
+    $('.user-message').show();
+}
+
+function cpuMessageClone() {
+    var cpuClone = $('.cpu-message').clone();
+    $('.chat-content').append(cpuClone);
     $('.cpu-message').show();
 }
+
+
 
 function sendMessage() {
     if (event.which == 13) {
         var txt = $('#chat-text-input').val();
-        $('.user-message').show();
+        messageClone();
         $('.user-text').text(txt);
         $('#chat-text-input').val('');
-        $('.cpu-text').text("ok!");
-        setTimeout(cpuMessage, 2000);
+        $('.cpu-text').text("Ciao Marco, Funziono!!");
+        setTimeout(cpuMessageClone, 2000);
     }
 }
 
+//Set current Time
 function addZero(i) {
     if (i < 10) {
         i = "0" + i;
