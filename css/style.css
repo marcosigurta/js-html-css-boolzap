@@ -168,16 +168,9 @@ main .main-wrapper .rightCol #chat-details {
 main .main-wrapper .rightCol #chat-details span {
   color: #b1b1b1;
   position: absolute;
-  top: 20px;
+  top: 32px;
   width: 200px;
-}
-
-main .main-wrapper .rightCol .chat-content .user-message {
-  align-self: flex-end;
-}
-
-main .main-wrapper .rightCol .chat-content .cpu-message {
-  align-self: flex-start;
+   display: none; 
 }
 
 main .main-wrapper .rightCol .chat-content  i {
@@ -203,13 +196,13 @@ main .main-wrapper .rightCol .chat-content .message-options span {
   cursor: pointer;
 }
 
-#user-message-template:hover i,
-#cpu-message-template:hover i{
+main .main-wrapper .rightCol .chat-content .user-message:hover i,
+main .main-wrapper .rightCol .chat-content .cpu-message:hover i{
 display: block;
 }
 
-#user-message-template,
-#cpu-message-template {
+.user-message,
+.cpu-message {
   border-radius: 10px;
   padding: 10px 50px 10px 10px;
   max-width: 450px;
@@ -219,12 +212,12 @@ display: block;
 }
 
 
-#user-message-template {
+.user-message {
   background-color: #d5f9ba;
   align-self: flex-end;
 }
 
-#cpu-message-template {
+.cpu-message {
   background-color: #fff;
   align-self: flex-start;
 }
