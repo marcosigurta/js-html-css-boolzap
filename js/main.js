@@ -30,12 +30,28 @@ function openOptions(template) {
         $('.cpu-message').mouseleave(function(){
             $(this).find('.message-options').hide();
         });
-        
+
+
         //   $(document).click(function (){
         //      $('.message-options').hide();
         //  })
     });
 }
+
+//Funzione per cancellare Messaggio
+
+function deleteMessageUser(template) {
+    template.find('.delete').click(function(){
+        template.hide(50);
+    })
+}
+
+// function deleteMessageCpu(template) {
+//     var template = $('.cpu-message');
+//     template.find('.delete').click(function(){
+//         $(this).parent('.message-options').parent('.cpu-message').hide();
+//     })
+// }
 
 //Input Testo chat
 function addMessage() {
@@ -64,6 +80,8 @@ function cpuMessage() {
 
     target.append(template);
     openOptions(template);
+    deleteMessageUser(template);
+    // deleteMessageCpu(template);
     var writing = $('#writing');
     writing.hide();
 }
@@ -77,6 +95,8 @@ function printMessage(txt) {
 
     target.append(template);
     openOptions(template);
+    deleteMessageUser(template);
+    // deleteMessageCpu(template)
     var writing = $('#writing');
     writing.show();
 
@@ -103,7 +123,7 @@ function currentTime() {
 
 function init() {
     addMessage();
-    searchContacts()
+    searchContacts();
 }
 
 $(document).ready(init);
