@@ -1,7 +1,39 @@
+//Funzione per la Ricerca utenti
+function searchContacts() {
+    var target = $('#search');
+    target.keyup(searchUserName);
+}
+
+function searchUserName() {
+    var input = $(this);
+    var txt = input.val();
+
+    var contacts = $('.conversation-chat');
+    contacts.each(function () {
+        var contact = $(this);
+        var name = contact.find('.contact-name').text();
+        if (name.toLowerCase().includes(txt.toLowerCase())) {
+            contact.show();
+        } else {
+            contact.hide();
+        }
+    })
+}
+
 //Funzione per mostrare le opzioni messaggio
-function openOptions(template){
-    template.children('.fa-chevron-down').click(function(){
-     $(this).parent().children('.message-options').toggle();
+function openOptions(template) {
+    template.children('.fa-chevron-down').click(function () {
+        $(this).parent().children('.message-options').toggle(200);
+        $('.user-message').mouseleave(function(){
+            $(this).find('.message-options').hide();
+        });
+        $('.cpu-message').mouseleave(function(){
+            $(this).find('.message-options').hide();
+        });
+        
+        //   $(document).click(function (){
+        //      $('.message-options').hide();
+        //  })
     });
 }
 
@@ -71,7 +103,7 @@ function currentTime() {
 
 function init() {
     addMessage();
-   
+    searchContacts()
 }
 
 $(document).ready(init);

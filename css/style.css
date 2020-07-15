@@ -132,11 +132,18 @@ main .main-wrapper .leftCol .conversations-wrapper {
   overflow: auto;
   height: calc(100% - 230px);
   scrollbar-width: thin;
+  background-color: #fff;
 }
 main .main-wrapper .leftCol .conversations-wrapper .conversation-chat {
   align-items: center;
   padding: 2%;
   border-bottom: 1px solid #dadada;
+  cursor: pointer;
+  transition: all 0.10s ease-in-out;
+}
+
+main .main-wrapper .leftCol .conversations-wrapper .conversation-chat:hover {
+  background-color: #dadada;
 }
 
 main .main-wrapper .leftCol .conversations-wrapper .conversation-chat .avatar {
@@ -209,6 +216,26 @@ display: block;
   position: relative;
   margin-bottom: 15px;
   align-items: center;
+}
+
+#user-cloud, #cpu-cloud{
+  position: absolute;
+  width: 60px;
+  height: 10px;
+  border-radius: 100%;
+  
+}
+
+#user-cloud {
+  right: -15px;
+  top: 0;
+  background-color:#d5f9ba;
+}
+
+#cpu-cloud {
+  left: -15px;
+  top: 0;
+  background-color: #fff;
 }
 
 
