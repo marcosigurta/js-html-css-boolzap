@@ -1,3 +1,17 @@
+//Funzione per selezionare la Chat
+function selectChat(){
+    var selectedContact = $('.conversation-chat');
+    selectedContact.click(function(){
+        var chatName = $(this).find('.contact-name').text();
+        var id = $('this').data();
+        console.log(id);
+        selectedContact.removeClass('active');
+        $(this).addClass('active');
+        $('#chat-name').text(chatName);
+
+    })
+}
+
 //Funzione per la Ricerca utenti
 function searchContacts() {
     var target = $('#search');
@@ -124,6 +138,7 @@ function currentTime() {
 function init() {
     addMessage();
     searchContacts();
+    selectChat();
 }
 
 $(document).ready(init);

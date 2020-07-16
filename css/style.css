@@ -5,7 +5,6 @@
   font-family: "Baloo Da 2", cursive;
 }
 
-
 i {
   cursor: pointer;
 }
@@ -138,12 +137,16 @@ main .main-wrapper .leftCol .conversations-wrapper {
 main .main-wrapper .leftCol .conversations-wrapper .conversation-chat {
   align-items: center;
   padding: 2%;
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #eaeaea;
   cursor: pointer;
-  transition: all 0.10s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 main .main-wrapper .leftCol .conversations-wrapper .conversation-chat:hover {
+  background-color: #dadada;
+}
+
+main .main-wrapper .leftCol .conversations-wrapper .conversation-chat.active {
   background-color: #dadada;
 }
 
@@ -164,6 +167,11 @@ main .main-wrapper .rightCol #chat-content {
   scrollbar-width: thin;
 }
 
+/* main .main-wrapper .rightCol #chat-content {
+  display: block;
+} */
+
+
 main .main-wrapper .rightCol .contact {
   align-items: center;
 }
@@ -178,10 +186,10 @@ main .main-wrapper .rightCol #chat-details span {
   position: absolute;
   top: 32px;
   width: 200px;
-   display: none; 
+  display: none;
 }
 
-main .main-wrapper .rightCol .chat-content  i {
+main .main-wrapper .rightCol .chat-content i {
   position: absolute;
   top: 5px;
   right: 8px;
@@ -198,15 +206,15 @@ main .main-wrapper .rightCol .chat-content .message-options {
   width: 150px;
   border-radius: 2px;
   padding: 10px;
-  display: none; 
+  display: none;
 }
 main .main-wrapper .rightCol .chat-content .message-options span {
   cursor: pointer;
 }
 
 main .main-wrapper .rightCol .chat-content .user-message:hover i,
-main .main-wrapper .rightCol .chat-content .cpu-message:hover i{
-display: block;
+main .main-wrapper .rightCol .chat-content .cpu-message:hover i {
+  display: block;
 }
 
 .user-message,
@@ -219,18 +227,18 @@ display: block;
   align-items: center;
 }
 
-#user-cloud, #cpu-cloud{
+#user-cloud,
+#cpu-cloud {
   position: absolute;
   width: 60px;
   height: 10px;
   border-radius: 100%;
-  
 }
 
 #user-cloud {
   right: -15px;
   top: 0;
-  background-color:#d5f9ba;
+  background-color: #d5f9ba;
 }
 
 #cpu-cloud {
@@ -238,7 +246,6 @@ display: block;
   top: 0;
   background-color: #fff;
 }
-
 
 .user-message {
   background-color: #d5f9ba;
