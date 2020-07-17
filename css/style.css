@@ -218,7 +218,12 @@ main .main-wrapper .rightCol .chat-content {
   flex-direction: column;
   padding: 20px;
   scrollbar-width: thin;
-  
+  display: none;
+}
+
+main .main-wrapper .rightCol .chat-content.active {
+  display: block;
+  display: flex;
 }
 
 
