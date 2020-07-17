@@ -33,20 +33,17 @@ function darkModeOn() {
 
 }
 
+
+
 //Funzione per selezionare la Chat
 function selectChat() {
     var selectedContact = $('.conversation-chat');
     selectedContact.click(function () {
-        var id = $(this).data('id');
-        var chat = $('.chat-content');
-        var selectedChat = $('.chat-content[data-id='+id+']');
         var chatInput = $('#chat-text-input').show();
         var chatName = $(this).find('.contact-name').text();
         selectedContact.removeClass('active');
         $(this).addClass('active');
         $('#chat-name').text(chatName);
-        chat.removeClass('active');
-        selectedChat.addClass('active');
     })
 }
 
@@ -73,9 +70,9 @@ function searchUserName() {
 }
 
 //Funzione per mostrare le opzioni messaggio
-function openOptions() {
-    $('.fa-chevron-down').click(function () {
-        $(this).siblings('.message-options').toggle(200);
+function openOptions(template) {
+    template.children('.fa-chevron-down').click(function () {
+        $(this).parent().children('.message-options').toggle(200);
         $('.user-message').mouseleave(function () {
             $(this).find('.message-options').hide();
         });
@@ -92,10 +89,9 @@ function openOptions() {
 
 //Funzione per cancellare Messaggio
 
-function deleteMessageUser() {
-    $('.delete').click(function () {
-        $(this).parents('.cpu-message').hide(50);
-        $(this).parents('.user-message').hide(50);
+function deleteMessageUser(template) {
+    template.find('.delete').click(function () {
+        template.hide(50);
     })
 }
 
@@ -132,8 +128,8 @@ function cpuMessage() {
     template.find('.message-time').text(currentTime());
 
     target.append(template);
-    openOptions();
-    deleteMessageUser();
+    openOptions(template);
+    deleteMessageUser(template);
     // deleteMessageCpu(template);
     var writing = $('#writing');
     writing.hide();
@@ -147,8 +143,8 @@ function printMessage(txt) {
     template.find('.message-time').text(currentTime());
 
     target.append(template);
-    openOptions();
-    deleteMessageUser();
+    openOptions(template);
+    deleteMessageUser(template);
     // deleteMessageCpu(template)
     var writing = $('#writing');
     writing.show();
