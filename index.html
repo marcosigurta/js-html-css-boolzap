@@ -29,6 +29,9 @@
                         <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
                         <i class="fas fa-ellipsis-v"></i>
+                        <div id="dark-mode-menu">
+                            <div id="darkModeBtn">Attiva Dark Mode</div>
+                        </div>
                     </div>
                 </div>
 
@@ -55,7 +58,7 @@
 
                 <!-- conversation Wrapper section -->
 
-                <div class="conversations-wrapper">
+                <div class="conversations-wrapper" id="conversations-wrapper">
                     <div class="conversation-chat flex" data-id="0">
                         <div class="avatar"></div>
                         <div class="conversation-chat-name">
@@ -73,7 +76,7 @@
                     <div class="conversation-chat flex" data-id="2">
                         <div class="avatar"></div>
                         <div class="conversation-chat-name">
-                            <h3 class="contact-name">Aragorn</h3>
+                            <h3 class="contact-name">Luciana</h3>
                             <p>Hey There! I'm using BoolZapp!</p>
                         </div>
                     </div>
@@ -100,7 +103,7 @@
                 </div>
 
                 <div id="chat-content" class="chat-content flex active" data-id="0">
-                    <div id="user-message-template" style="display: none;">
+                    <div class="user-message-template" style="display: none;">
                         <div class="user-message">
                             <div id="user-cloud"></div>
                             <div class="user-text"></div>
@@ -111,9 +114,8 @@
                                 <span class="delete">Delete Message</span>
                             </div>
                         </div>
-
                     </div>
-                    <div id="cpu-message-template" style="display: none;">
+                    <div class="cpu-message-template" style="display: none;">
                         <div class="cpu-message">
                             <div id="cpu-cloud"></div>
                             <div class="cpu-text"></div>
@@ -126,7 +128,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="chat-text flex">
                     <div>
                         <i class="far fa-smile"></i>

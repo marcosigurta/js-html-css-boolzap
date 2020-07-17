@@ -1,14 +1,51 @@
+//funzione dark mode 
+function darkMenu() {
+    var btn = $('.fa-ellipsis-v');
+    btn.click(function () {
+        $(this).siblings('#dark-mode-menu').toggle();
+    })
+}
+
+
+
+function darkModeOn() {
+    var darkModeBtn = $('#darkModeBtn');
+    darkModeBtn.click(function () {
+        $('body').toggleClass('blackGrey')
+        $(this).parent('#dark-mode-menu').toggleClass('blackGrey');
+        $('.leftCol').toggleClass('whitetext');
+        $('.leftCol').toggleClass('darkBorder');
+        $('.nav').toggleClass('blackGrey');
+        $('#conversations-wrapper').toggleClass('darkGrey');
+        $('.search').toggleClass('darkGrey');
+        $('.notification').toggleClass('darkBlue');
+        $('.chat-content').toggleClass('darkChat');
+        $('.chat-text').toggleClass('darkChatText');
+        $('input').toggleClass('inputDark');
+        $('label').toggleClass('inputDark');
+        $('.user-message').toggleClass('darkUserMsg');
+        $('#user-cloud').toggleClass('darkUserMsg');
+        $('.cpu-message').toggleClass('darkCpuMsg ');
+        $('#cpu-cloud').toggleClass('darkCpuMsg ');
+        $('#chat-name').toggleClass('whitetext');
+    })
+
+
+}
+
+
+
 //Funzione per selezionare la Chat
-function selectChat(){
+function selectChat() {
     var selectedContact = $('.conversation-chat');
-    selectedContact.click(function(){
+    selectedContact.click(function () {
+        var id = $(this).data('id');
+        console.log("user id: ", id);
+        var chatInput = $('#chat-text-input').show();
         var chatName = $(this).find('.contact-name').text();
-        var id = $('this').data();
-        console.log(id);
         selectedContact.removeClass('active');
         $(this).addClass('active');
         $('#chat-name').text(chatName);
-
     })
 }
 
@@ -38,10 +75,10 @@ function searchUserName() {
 function openOptions(template) {
     template.children('.fa-chevron-down').click(function () {
         $(this).parent().children('.message-options').toggle(200);
-        $('.user-message').mouseleave(function(){
+        $('.user-message').mouseleave(function () {
             $(this).find('.message-options').hide();
         });
-        $('.cpu-message').mouseleave(function(){
+        $('.cpu-message').mouseleave(function () {
             $(this).find('.message-options').hide();
         });
 
@@ -55,7 +92,7 @@ function openOptions(template) {
 //Funzione per cancellare Messaggio
 
 function deleteMessageUser(template) {
-    template.find('.delete').click(function(){
+    template.find('.delete').click(function () {
         template.hide(50);
     })
 }
@@ -86,7 +123,7 @@ function userMessage(event) {
 }
 
 function cpuMessage() {
-    var template = $('#cpu-message-template .cpu-message').clone();
+    var template = $('.cpu-message-template .cpu-message').clone();
     var target = $('.chat-content');
 
     template.find('.cpu-text').text('Ok!');
@@ -101,8 +138,8 @@ function cpuMessage() {
 }
 
 function printMessage(txt) {
-    var template = $('#user-message-template .user-message').clone();
-    var target = $('#chat-content');
+    var template = $('.user-message-template .user-message').clone();
+    var target = $('.chat-content');
 
     template.find('.user-text').text(txt);
     template.find('.message-time').text(currentTime());
@@ -139,6 +176,8 @@ function init() {
     addMessage();
     searchContacts();
     selectChat();
+    darkMenu();
+    darkModeOn()
 }
 
 $(document).ready(init);
