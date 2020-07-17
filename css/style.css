@@ -363,3 +363,14 @@ main .main-wrapper .rightCol .chat-text label #chat-text-input {
     left: -70px;
   }
 }
+
+@media (max-width: 600px) {
+  main .main-wrapper .leftCol {
+    width: 100%;
+  }
+
+  main .main-wrapper .rightCol {
+    display: none;
+    width: 100%;
+  }
+}

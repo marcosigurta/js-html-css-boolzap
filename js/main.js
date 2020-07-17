@@ -33,17 +33,46 @@ function darkModeOn() {
 
 }
 
+//funzione per xs mode 
 
+function showChatXs() {
+   
+    if ($(window).width() < 600) {
+         var chat = $('.conversation-chat');
+         var back = $('.rightCol .comands .fa-circle-notch');
+         chat.click(function(){
+            $('.leftCol').hide();
+            $('.rightCol').slideDown(500);
+        })
+    
+        back.click(function(){
+            $('.leftCol').show();
+            $('.rightCol').hide(500);
+        })
+     }
+  
+    
+}
 
 //Funzione per selezionare la Chat
 function selectChat() {
     var selectedContact = $('.conversation-chat');
     selectedContact.click(function () {
+
+        var id = $(this).data('id');
+        var chat = $('.chat-content');
+        var selectedChat = $('.chat-content[data-id=' + id + ']');
+
         var chatInput = $('#chat-text-input').show();
         var chatName = $(this).find('.contact-name').text();
+
         selectedContact.removeClass('active');
         $(this).addClass('active');
+
         $('#chat-name').text(chatName);
+
+        chat.removeClass('active');
+        selectedChat.addClass('active');
     })
 }
 
@@ -122,7 +151,7 @@ function userMessage(event) {
 
 function cpuMessage() {
     var template = $('.cpu-message-template .cpu-message').clone();
-    var target = $('.chat-content');
+    var target = $('.chat-content.active');
 
     template.find('.cpu-text').text('Ok!');
     template.find('.message-time').text(currentTime());
@@ -137,7 +166,7 @@ function cpuMessage() {
 
 function printMessage(txt) {
     var template = $('.user-message-template .user-message').clone();
-    var target = $('.chat-content');
+    var target = $('.chat-content.active');
 
     template.find('.user-text').text(txt);
     template.find('.message-time').text(currentTime());
@@ -175,7 +204,8 @@ function init() {
     searchContacts();
     selectChat();
     darkMenu();
-    darkModeOn()
+    darkModeOn();
+    showChatXs();
 }
 
 $(document).ready(init);
