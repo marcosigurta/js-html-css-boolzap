@@ -5,36 +5,35 @@
   font-family: "Baloo Da 2", cursive;
 }
 
-
 i {
   cursor: pointer;
 }
 
 /* Background Colors */
 .darkBorder {
-  border: 2px solid #303A3F!important;
+  border: 2px solid #303a3f !important;
 }
 .darkCpuMsg {
-  background-color: #262D31!important;
+  background-color: #262d31 !important;
   color: #fff;
 }
 .darkUserMsg {
-  background-color: #054740!important;
+  background-color: #054740 !important;
   color: #fff;
 }
 .inputDark {
-  background-color: #33383B !important;
+  background-color: #33383b !important;
   color: #fff;
 }
 
 .darkChatText {
-  background-color: #1E2428 !important;
+  background-color: #1e2428 !important;
 }
 .darkChat {
-  background: #162127!important;
+  background: #162127 !important;
 }
 .darkBlue {
-  background-color: #085373!important;
+  background-color: #085373 !important;
 }
 
 .whitetext {
@@ -42,11 +41,11 @@ i {
 }
 
 .blackGrey {
-  background-color: #2A2F32 !important;
+  background-color: #2a2f32 !important;
 }
 
 .darkGrey {
-  background-color: #131C21 !important;
+  background-color: #131c21 !important;
 }
 
 body {
@@ -226,11 +225,9 @@ main .main-wrapper .rightCol .chat-content.active {
   display: flex;
 }
 
-
 /* main .main-wrapper .rightCol #chat-content {
   display: block;
 } */
-
 
 main .main-wrapper .rightCol .contact {
   align-items: center;

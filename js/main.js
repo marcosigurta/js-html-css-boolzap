@@ -36,22 +36,24 @@ function darkModeOn() {
 //funzione per xs mode 
 
 function showChatXs() {
-   
+
     if ($(window).width() < 600) {
-         var chat = $('.conversation-chat');
-         var back = $('.rightCol .comands .fa-circle-notch');
-         chat.click(function(){
+
+        var chat = $('.conversation-chat');
+        var back = $('.rightCol .comands .fa-circle-notch');
+
+        chat.click(function () {
             $('.leftCol').hide();
             $('.rightCol').slideDown(500);
         })
-    
-        back.click(function(){
+
+        back.click(function () {
             $('.leftCol').show();
             $('.rightCol').hide(500);
         })
-     }
-  
-    
+    }
+
+
 }
 
 //Funzione per selezionare la Chat
